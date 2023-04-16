@@ -45,7 +45,7 @@ class AutenticateUserController {
         }
       )
 
-      return res.json({ token })
+      return res.json({ token, user: { id: user.id, name: user.name, email: user.email } })
     } catch (error) {
       console.log(error)
     }
