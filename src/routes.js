@@ -11,7 +11,7 @@ const routes = Router()
 
 routes.post('/login', new AuthenticateUserController().handle)
 
-routes.post('/users', ensureAuthenticated, new UserController().store)
+routes.post('/users', new UserController().store)
 routes.get('/users', ensureAuthenticated, new UserController().index)
 // routes.get('/users', ensureAuthenticated, new UserController().show)
 routes.put('/users', ensureAuthenticated, new UserController().update)
