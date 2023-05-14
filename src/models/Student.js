@@ -8,8 +8,8 @@ class Student extends Model {
         defaultValue: '',
         validate: {
           len: {
-            args: [2, 255],
-            msg: 'name must contain between 2 and 255 characters'
+            args: [3, 255],
+            msg: 'O campo nome precisa ter entre 3 e 255 caracteres!'
           }
         }
       },
@@ -18,8 +18,8 @@ class Student extends Model {
         defaultValue: '',
         validate: {
           len: {
-            args: [2, 255],
-            msg: 'surname must contain between 2 and 255 characters'
+            args: [3, 255],
+            msg: 'O campo sobrenome precisa ter entre 3 e 255 caracteres!'
           }
         }
       },
@@ -28,7 +28,7 @@ class Student extends Model {
         defaultValue: '',
         validate: {
           isEmail: {
-            msg: 'invalid e-mail'
+            msg: 'E-mail inválido!'
           }
         }
       },
@@ -37,7 +37,7 @@ class Student extends Model {
         defaultValue: '',
         validate: {
           isInt: {
-            msg: 'type age must be integer'
+            msg: 'O tipo do campo idade deve ser inteiro'
           }
         }
       },
@@ -46,7 +46,7 @@ class Student extends Model {
         defaultValue: '',
         validate: {
           isInt: {
-            msg: 'type weight must be integer'
+            msg: 'O tipo do campo peso deve ser inteiro'
           }
         }
       },
@@ -55,7 +55,7 @@ class Student extends Model {
         defaultValue: '',
         validate: {
           isInt: {
-            msg: 'type height must be integer'
+            msg: 'O tipo do campo altura deve ser inteiro'
           }
         }
       }

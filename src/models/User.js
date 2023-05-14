@@ -9,8 +9,8 @@ class User extends Model {
         defaultValue: '',
         validate: {
           len: {
-            args: [2, 255],
-            msg: 'name must contain between 2 and 255 characters'
+            args: [3, 255],
+            msg: 'O campo nome precisa ter entre 3 e 255 caracteres!'
           }
         }
       },
@@ -19,7 +19,7 @@ class User extends Model {
         defaultValue: '',
         validate: {
           isEmail: {
-            msg: 'invalid e-mail'
+            msg: 'E-mail inválido!'
           }
         }
       },
@@ -33,7 +33,7 @@ class User extends Model {
         validate: {
           len: {
             args: [6, 10],
-            msg: 'password must contain between 6 and 10 characters'
+            msg: 'O campo senha precisa ter entre 6 e 10 caracteres!'
           }
         }
       }

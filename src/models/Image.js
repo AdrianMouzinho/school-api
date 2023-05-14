@@ -10,7 +10,7 @@ class Image extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'field cannot be empty'
+            msg: 'Campo não pode ser vazio!'
           }
         }
       },
@@ -19,7 +19,7 @@ class Image extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'field cannot be empty'
+            msg: 'Campo não pode ser vazio!'
           }
         }
       },
