@@ -59,7 +59,7 @@ class StudentController {
 
       if (!student) {
         return res.status(404).json({
-          errors: ['student not found']
+          errors: ['Estudante não encontrado!']
         })
       }
 
@@ -80,7 +80,7 @@ class StudentController {
 
       if (!student) {
         return res.status(404).json({
-          errors: ['student not found']
+          errors: ['Estudante não encontrado!']
         })
       }
 
@@ -101,7 +101,7 @@ class StudentController {
 
     if (!id) {
       return res.status(404).json({
-        errors: ['id is missing']
+        errors: ['Id é obrigatório!']
       })
     }
 
@@ -110,7 +110,7 @@ class StudentController {
 
       if (!student) {
         return res.status(404).json({
-          errors: ['student not found']
+          errors: ['Estudante não encontrado!']
         })
       }
 

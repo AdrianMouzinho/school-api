@@ -12,7 +12,7 @@ class StudentImageController {
 
     if (!id) {
       return res.status(400).json({
-        errors: ['id required']
+        errors: ['Id é obrigatório!']
       })
     }
 
@@ -28,7 +28,7 @@ class StudentImageController {
 
         if (!student) {
           return res.status(400).json({
-            errors: ['student not found']
+            errors: ['Estudante não encontrado!']
           })
         }
 

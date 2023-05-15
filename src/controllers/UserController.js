@@ -44,7 +44,7 @@ class UserController {
 
       if (!user) {
         return res.status(404).json({
-          errors: ['user not found']
+          errors: ['Usuário não encontrado!']
         })
       }
 
@@ -65,7 +65,7 @@ class UserController {
 
       if (!user) {
         return res.status(404).json({
-          errors: ['user not found']
+          errors: ['Usuário não encontrado!']
         })
       }
 
@@ -89,7 +89,7 @@ class UserController {
 
       if (!user) {
         return res.status(404).json({
-          errors: ['user not found']
+          errors: ['Usuário não encontrado!']
         })
       }
 
