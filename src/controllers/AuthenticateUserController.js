@@ -7,7 +7,7 @@ class AutenticateUserController {
 
     if (!email || !password) {
       return res.status(400).json({
-        errors: ['email or password are missing']
+        errors: ['Os campos e-mail e senha são obrigatórios!']
       })
     }
 
@@ -20,7 +20,7 @@ class AutenticateUserController {
 
       if (!user) {
         return res.status(400).json({
-          errors: ['user not found']
+          errors: ['Usuário não encontrado!']
         })
       }
 
@@ -28,7 +28,7 @@ class AutenticateUserController {
 
       if (!passwordIsValid) {
         return res.status(400).json({
-          errors: ['invalid password']
+          errors: ['Senha inválida!']
         })
       }
 
