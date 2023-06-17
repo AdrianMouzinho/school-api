@@ -12,7 +12,7 @@ $ cd school-api
 # Instale as dependências
 $ npm install
 
-# Renomei o arquivo .env.example para .env e renomei as variáveis de ambiente
+# Renomei o arquivo .env.example para .env e altere as variáveis de ambiente
 
 # Inicie a aplicação
 $ npm run dev
