@@ -1,54 +1,37 @@
-const { DataTypes, Model } = require('sequelize')
-const bcryptjs = require('bcryptjs')
+const { DataTypes } = require('sequelize')
+const sequelize = require('../config/database')
 
-class User extends Model {
-  static init (sequelize) {
-    super.init({
-      name: {
-        type: DataTypes.STRING,
-        defaultValue: '',
-        validate: {
-          len: {
-            args: [3, 255],
-            msg: 'O campo nome precisa ter entre 3 e 255 caracteres!'
-          }
-        }
-      },
-      email: {
-        type: DataTypes.STRING,
-        defaultValue: '',
-        validate: {
-          isEmail: {
-            msg: 'E-mail inválido!'
-          }
-        }
-      },
-      password: {
-        type: DataTypes.STRING,
-        defaultValue: ''
-      },
-      password_decrypted: {
-        type: DataTypes.VIRTUAL,
-        defaultValue: '',
-        validate: {
-          len: {
-            args: [6, 10],
-            msg: 'O campo senha precisa ter entre 6 e 10 caracteres!'
-          }
-        }
-      }
-    }, { sequelize })
-
-    this.addHook('beforeSave', async user => {
-      if (user.password_decrypted) {
-        user.password = await bcryptjs.hash(user.password_decrypted, 8)
-      }
-    })
+const User = sequelize.define('User', {
+  id: {
+    type: DataTypes.UUID,
+    primaryKey: true,
+    allowNull: false,
+    defaultValue: DataTypes.UUIDV4
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: {
+      name: 'email',
+      msg: 'Esse e-mail já existe.'
+    }
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  createdAt: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
+  },
+  updatedAt: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
   }
-
-  passwordIsValid (passwordDecrypted) {
-    return bcryptjs.compare(passwordDecrypted, this.password)
-  }
-}
+})
 
 module.exports = User
